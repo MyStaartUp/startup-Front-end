@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ajouter une Startup</title>
+</head>
+<body>
+    <h1>Ajouter une Startup</h1>
+    
+    <form action="{{ url_for('add_startup') }}" method="POST" enctype="multipart/form-data">
+        <label for="name">Nom :</label>
+        <input type="text" id="name" name="name" required><br>
+
+        <label for="description">Description :</label>
+        <textarea id="description" name="description" required></textarea><br>
+
+        <label for="logo">Logo :</label>
+        <input type="file" id="logo" name="logo" accept="image/*" required><br>
+
+        <label for="category">Catégorie :</label>
+        <select id="category" name="category" required>
+            <option value="">Sélectionnez une catégorie</option>
+            <option value="Technologie">Technologie</option>
+            <option value="Sante">Santé</option>
+            <option value="Finance">Finance</option>
+            <option value="Education">Éducation</option>
+            <option value="Environnement">Environnement</option>
+        </select><br><br>
+
+        <button type="submit">Ajouter la Startup</button>
+    </form>
+
+    <a href="{{ url_for('list_startups') }}">Retourner à la liste des startups</a>
+</body>
+</html>

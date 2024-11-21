@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Modifier une Startup</title>
+</head>
+<body>
+    <h1>Modifier la Startup</h1>
+
+    <!-- Formulaire de modification -->
+    <form method="POST" enctype="multipart/form-data">
+        <!-- Nom -->
+        <label for="name">Nom :</label>
+        <input type="text" id="name" name="name" value="{{ startup.name }}" required><br><br>
+
+        <!-- Description -->
+        <label for="description">Description :</label>
+        <textarea id="description" name="description" required>{{ startup.description }}</textarea><br><br>
+
+        <!-- Logo actuel -->
+        {% if startup.logo %}
+            <p>Logo actuel :</p>
+            <img src="{{ startup.logo }}" alt="Logo actuel" width="200"><br>
+        {% endif %}
+
+        <!-- Nouveau logo -->
+        <label for="logo">Modifier le logo :</label>
+        <input type="file" id="logo" name="logo" accept="image/*"><br><br>
+
+        <label for="category">Catégorie :</label>
+        <input type="text" id="category" name="category" value="{{ startup.category }}" required><br><br>
+
+        <!-- Bouton pour soumettre les modifications -->
+        <button type="submit">Mettre à jour</button>
+    </form>
+
+    <!-- Lien pour retourner à la liste des startups -->
+    <a href="{{ url_for('list_startups') }}">Retour à la liste des startups</a>
+</body>
+</html>

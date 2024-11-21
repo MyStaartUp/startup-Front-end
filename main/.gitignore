@@ -1,0 +1,24 @@
+# Environnements virtuels
+venv/
+env/
+
+# Fichiers compilés Python
+*.pyc
+*.pyo
+__pycache__/
+
+# Fichiers de configuration spécifiques à la machine
+instance/
+*.sqlite3
+
+# Dossier d'uploads (optionnel si les images téléchargées ne doivent pas être partagées)
+
+# Configurations IDE
+.vscode/
+.idea/
+.cursor
+
+# Fichiers système
+.DS_Store
+Thumbs.db
+

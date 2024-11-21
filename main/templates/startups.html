@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liste des Startups</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <form method="GET" action="{{ url_for('search_startups') }}">
+        <input type="text" name="q" placeholder="Rechercher une startup">
+        <button type="submit">Rechercher</button>
+    </form>    
+</head>
+<body>
+    <h1>Liste des Startups</h1>
+
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul>
+            {% for message in messages %}
+                <li>{{ message }}</li>
+            {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+
+    <table>
+        <tr>
+            <th>Nom</th>
+            <th>Description</th>
+            <th>Logo</th>
+        </tr>
+        {% for startup in startups %}
+            <div class="startup-card">
+                {% if startup.logo %}
+                    <img src="{{ url_for('static', filename='uploads/' + startup.logo) }}" alt="Logo de {{ startup.name }}" class="startup-logo">
+                {% endif %}
+                <h2>{{ startup.name }}</h2>
+                <p>{{ startup.description }}</p>
+                <p><strong>Catégorie :</strong> {{ startup.category }}</p>
+                <p>
+                <a href="{{ url_for('delete_startup', id=startup.id) }}" onclick="return confirm('Êtes-vous sûr de vouloir supprimer cette startup ?')">Supprimer</a>
+            </div>
+        {% endfor %}
+    </table>
+
+    <a href="{{ url_for('add_startup') }}">Ajouter une nouvelle startup</a>
+
+</body>
+</html>

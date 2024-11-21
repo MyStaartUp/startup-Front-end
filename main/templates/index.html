@@ -1,0 +1,17 @@
+<section id="all-startups">
+    <h2>All Startups</h2>
+    <div class="startup-grid">
+        {% if startups %}
+            {% for startup in startups %}
+                <div class="startup-card">
+                    <img src="{{ startup.logo }}" alt="{{ startup.name }} Logo">
+                    <h3>{{ startup.name }}</h3>
+                    <p>{{ startup.description }}</p>
+                    <a href="#">Learn More</a>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>No startups available at the moment.</p>
+        {% endif %}
+    </div>
+</section>
