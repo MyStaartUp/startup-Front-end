@@ -13,8 +13,9 @@ Une application Flask pour gérer et afficher des startups un peu comme un annua
      python -m venv venv
      source venv/bin/activate 
  
-  **Sous Windows** :
-     venv\Scripts\activate
+.**Sous Windows** :
+
+    venv\Scripts\activate
 
 ## Installez les dépendances :
 
@@ -32,7 +33,7 @@ Une application Flask pour gérer et afficher des startups un peu comme un annua
 
 ---
 
-##. Collaboration et mise à jour**
+## Collaboration et mise à jour
 
 Une fois que le projet est pret a etre update :
 . **vous devez travailler sur une branche distincte** :
