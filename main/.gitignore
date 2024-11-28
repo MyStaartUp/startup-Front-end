@@ -1,5 +1,6 @@
 i# Environnements virtuels
 venv/
+.venv/
 .env/
 
 # Fichiers compilés Python

@@ -54,7 +54,7 @@ def add_startup():
 
             # Crée une nouvelle startup avec le chemin de l'image enregistrée
             logo_path = f"static/uploads/{filename}"  # Chemin relatif
-            new_startup = Startup(name=name, description=description, logo=logo_path)
+            new_startup = Startup(name=name, description=description, logo=filename)
             db.session.add(new_startup)
             db.session.commit()
             flash('Startup ajoutée avec succès!')
