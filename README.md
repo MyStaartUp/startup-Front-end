@@ -10,14 +10,17 @@ StartupHub est une plateforme web permettant aux utilisateurs de découvrir des 
 - ➕ Ajout et gestion de startups
 - 🖼️ Upload de logos avec prévisualisation
 - 📊 Tableau de bord utilisateur
+- 👨‍💼 Profils investisseurs
+- 💬 Messagerie interne
+- 🔔 Système de notifications
 
 ## 🛠️ Technologies utilisées
 
 - React 18
 - TypeScript
 - Vite
-- Tailwind CSS
 - React Router DOM
+- Tailwind CSS
 - Zustand (gestion d'état)
 - Lucide React (icônes)
 
@@ -25,13 +28,14 @@ StartupHub est une plateforme web permettant aux utilisateurs de découvrir des 
 
 - Node.js (version 18 ou supérieure)
 - npm ou yarn
+- Git
 
 ## 🚀 Installation et démarrage
 
 1. Clonez le dépôt :
 ```bash
-git clone <url-du-repo>
-cd startup-platform
+git clone https://github.com/MyStaartUp/startup-Front-end
+cd startup-Front-end
 ```
 
 2. Installez les dépendances :
@@ -41,86 +45,100 @@ npm install
 
 3. Démarrez le serveur de développement :
 ```bash
-npm run dev
+npm run dev --host
 ```
 
-L'application sera accessible à l'adresse `http://localhost:5173`
+L'application sera accessible à l'adresse `http://localhost:3000` et sur votre adresse locale pour tester la compatibilité sur vos differentes plateforme
 
-## 📁 Structure du projet
+## 👥 Comment contribuer
 
-```
-src/
-├── components/         # Composants réutilisables
-│   ├── ui/            # Composants UI génériques
-│   ├── Layout.tsx     # Layout principal
-│   └── Navbar.tsx     # Barre de navigation
-├── pages/             # Pages de l'application
-│   ├── Home.tsx       # Page d'accueil
-│   ├── Login.tsx      # Page de connexion
-│   ├── Register.tsx   # Page d'inscription
-│   ├── Dashboard.tsx  # Tableau de bord
-│   └── AddStartup.tsx # Ajout de startup
-├── store/             # État global (Zustand)
-├── types/             # Types TypeScript
-├── main.tsx          # Point d'entrée
-└── App.tsx           # Composant racine
-```
+1. Fork le projet
+2. Créez votre branche de fonctionnalité (`git checkout -b feature/AmazingFeature`)
+3. Committez vos changements (`git commit -m 'Add some AmazingFeature'`)
+4. Push vers la branche (`git push origin feature/AmazingFeature`)
+5. Ouvrez une Pull Request
 
-## 🔧 Scripts disponibles
+### Guidelines de contribution
 
-- `npm run dev` : Démarre le serveur de développement
-- `npm run build` : Crée une version de production
-- `npm run preview` : Prévisualise la version de production
-- `npm run lint` : Vérifie le code avec ESLint
+- Suivez les conventions de code existantes
+- Écrivez des tests pour les nouvelles fonctionnalités
+- Mettez à jour la documentation si nécessaire
+- Utilisez des messages de commit descriptifs
+- Créez une branche par fonctionnalité
 
-## 🔒 Authentification
+### Issues ouvertes - À faire
 
-L'authentification est actuellement simulée avec un store local. Dans une version production, il faudrait :
-- Implémenter une vraie API backend
-- Ajouter la validation JWT
-- Sécuriser les routes protégées
-- Gérer la persistance des sessions
+1. 🔒 Authentification
+   - [ ] Implémenter la validation des formulaires
+   - [ ] Ajouter la récupération de mot de passe
+   - [ ] Intégrer l'authentification sociale
 
-## 📝 Gestion des startups
+2. 👤 Profils
+   - [ ] Ajouter l'upload d'avatar
+   - [ ] Implémenter la validation des profils investisseurs
+   - [ ] Ajouter des badges de vérification
 
-Les startups peuvent être :
-- Ajoutées avec des informations détaillées
-- Catégorisées (Tech, Santé, Éducation, etc.)
-- Filtrées et recherchées
-- Gérées depuis le tableau de bord
+3. 🔍 Recherche
+   - [ ] Implémenter les filtres avancés
+   - [ ] Ajouter la recherche par localisation
+   - [ ] Intégrer un système de tags
 
-## 🎨 UI/UX
+4. 💬 Messagerie
+   - [ ] Créer l'interface de chat
+   - [ ] Implémenter les notifications en temps réel
+   - [ ] Ajouter le support des pièces jointes
 
-- Design responsive avec Tailwind CSS
-- Composants réutilisables (Button, Input)
-- Feedback utilisateur (loading states, messages d'erreur)
-- Interface intuitive et moderne
+5. 📊 Analytics
+   - [ ] Ajouter des tableaux de bord analytiques
+   - [ ] Implémenter le suivi des métriques
+   - [ ] Créer des rapports exportables
 
-## 🔄 État de l'application
+### Prochaines étapes
 
-L'état global est géré avec Zustand, stockant :
-- L'état d'authentification
-- Les informations utilisateur
-- Les données de session
+#### Phase 1 - Base solide (En cours)
+- [ ] Finaliser l'authentification
+- [ ] Compléter les profils utilisateurs
+- [ ] Améliorer la gestion des erreurs
 
-## 🛣️ Routes
-
-- `/` : Page d'accueil
-- `/login` : Connexion
-- `/register` : Inscription
-- `/dashboard` : Tableau de bord utilisateur
-- `/add-startup` : Ajout d'une startup
-
-## 🔜 Améliorations futures
-
-- [ ] Intégration backend
-- [ ] Système de commentaires
+#### Phase 2 - Fonctionnalités avancées
+- [ ] Système de messagerie
 - [ ] Notifications en temps réel
-- [ ] Système de likes/follows
-- [ ] Export des données
-- [ ] Mode sombre
-- [ ] Internationalisation
+- [ ] Recherche avancée
+
+#### Phase 3 - Expansion
+- [ ] Application mobile
+- [ ] API publique
+- [ ] Intégrations tierces
+
+## 🧪 Tests
+
+```bash
+npm run test
+```
+
+## 📝 Convention de code
+
+- Utilisez TypeScript strict mode
+- Suivez les règles ESLint
+- Utilisez des composants fonctionnels et des hooks
+- Commentez le code complexe
+- Utilisez des types explicites
+
+## 🔒 Sécurité
+
+Si vous découvrez une faille de sécurité, merci de :
+1. Ne pas la publier publiquement
+2. Envoyer un email à security@startuphub.com
+3. Attendre une réponse avant de divulguer le problème
 
 ## 📄 Licence
 
 MIT
+
+## 🤝 Contact
+
+Pour toute question ou suggestion :
+- Email: djakpakoffi1@gmail.com
+- Discord: [..]
+- Linkedin: [www.linkedin.com/in/koffi-djakpa-46a40a275]
+  
